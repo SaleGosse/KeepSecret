@@ -3,18 +3,19 @@
 #Secretum 
 #date 1>> ~/Bureau/Script/Debugger/debugger.txt
 #echo " " >> ~/Bureau/Script/Debugger/debugger.txts
-#echo "################## Debug bashTor.sh #################" >> /home/fabien/Bureau/Script/Debugger/debugger.txt
+#echo "################## Debug operateTor.sh #################" >> /home/fabien/Bureau/Script/Debugger/debugger.txt
 #exec 5>> ~/Bureau/Script/Debugger/debugger.txt
 #BASH_XTRACEFD="5"
 #set -x  
 
 
-help(){
+helpTor()
+{
     echo "
         #===========================================================================================#
         # SYNOPSIS                                                                                  #
         #                                                                                           #
-        #   bashTor.sh [-option]                                                                    #
+        #   operateTor.sh [-option]                                                                 #
         #                                                                                           #
         # DESCRIPTION                                                                               #
         #                                                                                           #
@@ -35,9 +36,10 @@ help(){
         #    -h,     --help         print this help                                                 #
         #                                                                                           #
         # AUTHORS                                                                                   #
-        #                                           #
+        #                                                                                           #
         #===========================================================================================#
-        "}
+        "
+ }
 
 RED='\033[0;31m'
 LGREEN='\033[1;32m'
@@ -178,7 +180,7 @@ do
 		echo -e " ${LGREEN}Version : ${RED}$version "
   	;;
     h)
-        help
+        helpTor
         exit 0
    
     ;;
@@ -225,19 +227,18 @@ do
   							exit 0
   				 		;;
                 --help )
-							help
+							helpTor
 							exit 0
   				 		;;
     				*)  
-       						echo -e " \x1B[01;95m Sorry bashTor.sh does not know this option, you can use -h ou --help for more details.\x1B[0m " 
+       						echo -e " \x1B[01;95m Sorry operateTor.sh does not know this option, you can use -h ou --help for more details.\x1B[0m " 
   	 						exit 1
   	 					;;
        	esac
-    ;;
+        ;;
     *)  
-        echo -e " \x1B[01;95m Sorry bashTor.sh does not know this option, you can use -h ou --help for more details.\x1B[0m " 
+        echo -e " \x1B[01;95m Sorry operateTor.sh does not know this option, you can use -h ou --help for more details.\x1B[0m " 
     	exit 1
     ;;
     esac
 done
-
